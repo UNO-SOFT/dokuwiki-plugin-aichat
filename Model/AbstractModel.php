@@ -240,7 +240,7 @@ abstract class AbstractModel implements ModelInterface
         if ($retry === 0) {
             $this->requestStart = microtime(true);
         } else {
-            sleep($retry); // wait a bit between retries
+            sleep(60 + 10 * $retry); // wait a bit between retries
         }
         $this->requestsMade++;
 
